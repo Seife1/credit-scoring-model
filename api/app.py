@@ -1,13 +1,14 @@
 import pandas as pd
 from flask import Flask, request, render_template, jsonify
 from load_model import load_model
+
 import sys, os
 
 # Add the parent directory to the Python path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from scripts.feature_engineering import FeatureEngineering  # Adjusted import statement
-from scripts.credit_scoring_model import CreditScoreRFM
+from scripts.data_preprocessing import CreditScoreRFM
 
 # Initialize Flask app
 app = Flask(__name__)

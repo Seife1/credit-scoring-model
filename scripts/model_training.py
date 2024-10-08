@@ -63,14 +63,14 @@ class CreditScoreRFM:
         return rfm_data
     
    
-    def calculate_counts(data):
+    def calculate_counts(self, data):
         grouped_data = data.groupby('RFM_bin')
         good_count = grouped_data['Risk_Label'].apply(lambda x: (x == 'Good').sum())
         bad_count = grouped_data['Risk_Label'].apply(lambda x: (x == 'Bad').sum())
         
         return good_count, bad_count
 
-    def calculate_woe(good_count, bad_count):
+    def calculate_woe(self, good_count, bad_count):
         total_good = good_count.sum()
         total_bad = bad_count.sum()
 
