@@ -1,20 +1,26 @@
 import pandas as pd
 from flask import Flask, request, render_template, jsonify
-from load_model import load_model
+
 
 import sys, os
 
 # Add the parent directory to the Python path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from scripts.feature_engineering import FeatureEngineering  # Adjusted import statement
-from scripts.data_preprocessing import CreditScoreRFM
+from scripts.feature_engineering import FeatureEngineering 
+from scripts.model_serving import load_model
+from scripts.model_training import CreditScoreRFM
 
 # Initialize Flask app
 app = Flask(__name__)
 
 # Load the model once at the start
-model = load_model('model/best_model.pkl')
+# model = load_model('./models/best_model.pkl')
+# Get the absolute path to the models directory
+model_path = os.path.join(os.path.dirname(__file__), 'models', 'best_model.pkl')
+
+# Load the model
+model = load_model(model_path)
 
 @app.route('/', methods=['GET'])
 def index():

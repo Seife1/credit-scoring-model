@@ -123,7 +123,7 @@ input[type="number"]:focus, input[type="date"]:focus, select:focus {
 }
 
 .submit-btn {
-    background-color: #3498db;
+    background-color: #2cbb3f;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -135,7 +135,7 @@ input[type="number"]:focus, input[type="date"]:focus, select:focus {
 }
 
 .submit-btn:hover {
-    background-color: #2980b9;
+    background-color: #197e26;
 }
 
 /* Responsive adjustments */
@@ -170,9 +170,10 @@ input[type="number"]:focus, input[type="date"]:focus, select:focus {
 
 /* Result table styling */
 .result-table {
-    width: 100%;
+    width: 55%; 
+    max-width: 1000px; 
+    margin: 20px auto; 
     border-collapse: collapse;
-    margin-top: 20px;
 }
 
 .result-table th, .result-table td {
@@ -182,7 +183,7 @@ input[type="number"]:focus, input[type="date"]:focus, select:focus {
 }
 
 .result-table th {
-    background-color: #3498db;
+    background-color: #2cbb3f;
     color: white;
 }
 

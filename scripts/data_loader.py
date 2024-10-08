@@ -1,4 +1,3 @@
-# scripts/load_data.py
 # Import necessary libraries
 import pandas as pd
 
